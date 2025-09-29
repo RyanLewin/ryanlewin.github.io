@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Books Upon Books - Ryan Lewin - Game Developer Portfolio</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/games.css">
+    <link rel="stylesheet" href="/css/fullimage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var headerWrapper = document.createElement('div');
+            headerWrapper.id = 'loaded-header';
+
+            var body = document.getElementsByTagName('body')[0];
+            body.insertBefore(headerWrapper, body.firstChild);
+            $("#loaded-header").load("/Pages/header.html");
+
+            $("img").click(
+                function()
+                {
+                    console.log($(this).parent()[0].tagName)
+                    if ($(this).parent()[0].tagName !== "A")
+                    {
+                        $(".fullscreen-image").attr("src", $(this).attr("src"));
+                        $(".fullscreen-overlay").css('display', 'flex');
+                        document.body.style.overflow = 'hidden';
+                    }
+                }
+            );
+
+            $(".fullscreen-overlay").click(function () {
+                $(".fullscreen-overlay").css('display', 'none');
+                document.body.style.overflow = 'auto';
+            })
+        });
+    </script>
+
+    <div class="header-break"></div>
+
+    <div id="content">
+        <h2>Books Upon Books</h2>
+        <br>
+        <div>
+            <p style="margin: 20px"><strong>Game Details</strong></p>
+            <p>Genre: Casual, Simulation, Shop Builder</p>
+            <p>Languages: C++, Blueprints</p>
+            <p>Tools: Unreal Engine 5.3, Jetbrains Rider</p>
+            <p>Platform: Steam</p>
+
+            <a href="https://store.steampowered.com/app/2999740/Books_Upon_Books/" target="_blank"><img class="game-link" style="margin: 20px;" src="/Images/Steam_icon_logo_logotype.png" width="64px" /></a>
+        </div>
+
+        <br><hr>
+
+        <p style="margin: 20px"><strong>Game Brief</strong></p>
+        <p>It’s time to turn the page and create the bookshop of your dreams. Customise your Layout. Customise your Colour Scheme. Build bigger and bigger. A casual, simulation game where you get to build and tend to your own bookshop. </p>
+        
+        <br><hr>
+
+        <div id="about-section">
+            <div id="about-text">
+                <p style="margin: 20px"><strong>About The Game</strong></p>
+                <p>A casual, simulation game in which you get to design, build upon, and upgrade your very own bookshop, before tending to it's customers during the day!</p>
+                <br><p style="margin: 20px"><strong>Building</strong></p>
+                <p>As the player, you havethe ability to spend your hard-earned money on buying 1 functional object per day, and as many decorations as you can afford. You are able to reroll for a small fee, refreshing the objects that are available. New tiles can be unlocked and walls can be customised or removed between tiles.</p>
+                <br><p style="margin: 20px"><strong>Colour Palette</strong></p>
+                <p>Customise every detail of your shop, even down to the colours used. With 8 changeable colours used throughout, alter these to fit your style and make the shop your own.</p>
+                <br><p style="margin: 20px"><strong>Serve Customers</strong></p>
+                <p>Customers will come in throughout the day, rummaging through the shelves before going to the counter to be served by you or your temporary hired staff, giving a number of coins.</p>
+                <br><p style="margin: 20px"><strong>Restock Shelves</strong></p>
+                <p>Once the customer has taken a book, the shelf will need to be restocked. You can see taken books by the red outline and once interacted with, a quick minigame will pop up for you to complete, allowing the customer to use that shelf again.</p>
+            </div>
+            <div id="about-images">
+                <img src="/Images/books/Screenshot 2024-05-15 205347.png" />
+                <img src="/Images/books/Screenshot 2024-05-16 155307.png" />
+                <img src="/Images/books/Screenshot 2024-06-24 214711.png" />
+            </div>
+        </div>
+        
+        <br><hr>
+
+        <p style="margin: 20px"><strong>My Work</strong></p>
+        <p>Everything other than the player models, which were purchased as a Synty pack, was programmed, designed and animated by myself.</p>
+        
+
+        <br><hr><br>
+
+        <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/aiLqJiKg0cU" title="Books Upon Books - June Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <br>
+
+        <table>
+            <tr>
+                <td><img class="game-table-image" src="/Images/books/Bookshop-Win64-Shipping_JBpmEf7NVe.png"/></td>
+                <td><img class="game-table-image" src="/Images/books/Screenshot 2024-05-16 155112.png"/></td>
+            </tr>
+            <tr>
+                <td><img class="game-table-image" src="/Images/books/Screenshot 2024-05-16 155229.png"/></td>
+                <td><img class="game-table-image" src="/Images/books/Screenshot 2024-05-16 155307_old.png"/></td>
+            </tr>
+            <tr>
+                <td><img class="game-table-image" src="/Images/books/Screenshot 2024-05-16 155307.png"/></td>
+                <td><img class="game-table-image" src="/Images/books/Bookshop-RestockGame.png"/></td>
+            </tr>
+            <tr>
+                <td><img class="game-table-image" src="/Images/books/Bookshop-Win64-Shipping_oSCZDth9qI.png"/></td>
+                <td><img class="game-table-image" src="/Images/books/Bookshop-Win64-Shipping_M2qbP7twUf.png"/></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="fullscreen-overlay">
+        <img src="" alt="Selected Image" class="fullscreen-image">
+    </div>
+</body>
+</html>

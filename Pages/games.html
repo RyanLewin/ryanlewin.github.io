@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Ryan Lewin - Game Developer Portfolio</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/games.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/Scripts/functions.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var headerWrapper = document.createElement('div');
+            headerWrapper.id = 'loaded-header';
+
+            var body = document.getElementsByTagName('body')[0];
+            body.insertBefore(headerWrapper, body.firstChild);
+            $("#loaded-header").load("/Pages/header.html");
+
+            $('.game-image').click(function () {
+                window.location.href = '/Pages/Games/' + this.id + '.html';
+            })
+        });
+    </script>
+
+    <!-- <div id="loaded-header"></div> -->
+
+    <div class="header-break"></div>
+
+    <h1 class="centered">Games</h1>
+
+    <div id="content">
+        <div id="games-layout">
+            <div class="game">
+                <img class="game-image circular-image" id="books" src="../Images/Books_300.png" />
+                <h2 class="centered game-title">Books Upon Books</h2>
+                <p>Contribution: Self-designed and published game. 
+                </p>
+                <div class="tools-list">
+                    <p class="tool unreal-tool">Unreal</p>
+                    <p class="tool cplusplus-tool">C++</p>
+                    <p class="tool bp-tool">Blueprints</p>
+                </div>
+                <p>Platform: Steam</p>
+                <p>Timeline: January 2024 - Current</p>
+            </div>
+            <div class="game">
+                <img class="game-image circular-image" id="astronaught" src="../Images/GamesIcon.png" style="object-position: 50% 40%;" />
+                <h2 class="centered game-title">Astronaught</h2>
+                <p>Contribution: AI for the robot enemies, making use of State Tree's in Unreal to spawn enemies and fight the player. 
+                    Programmed the ship's turrets and upgradables, which auto fire on the enemies.
+                    Implemented day/night cycle that rotated the sun and moon and controlled spawning.
+                    UI implementation with compass towards the ship.
+                </p>
+                <div class="tools-list">
+                    <p class="tool unreal-tool">Unreal</p>
+                    <p class="tool cplusplus-tool">C++</p>
+                    <p class="tool bp-tool">Blueprints</p>
+                </div>
+                <p>Platform: Windows</p>
+                <p>Timeline: September 2023</p>
+            </div>
+            <div class="game">
+                <img class="game-image circular-image" id="ruffntumble" src="../Images/ruffntumble.jpg" style="object-position: 50% 40%;" />
+                <h2 class="centered game-title">Ruff 'N' Tumble</h2>
+                <p>Contribution: Implemented the mall and lobby systems, allowing for waiting for and joining games.
+                    Added gamemodes, 'King of the Hill', 'Slushy', 'Diner Dash' and 'Racing'.
+                    Also UI and bug fixing based on work from before I joined.
+                </p>
+                <div class="tools-list">
+                    <p class="tool unreal-tool">Unreal</p>
+                    <p class="tool cplusplus-tool">C++</p>
+                    <p class="tool bp-tool">Blueprints</p>
+                </div>
+                <p>Platform: Windows</p>
+                <p>Timeline: January 2022 - August 2023</p>
+            </div>
+            <div class="game">
+                <img class="game-image circular-image" id="horror" src="../Images/multiplayer-horror.png" style="object-position: 50% 40%;" />
+                <h2 class="centered game-title">Multiplayer Horror</h2>
+                <p>Contribution: Implemented voice chat with switching of channels. 
+                    Added character mechanics for alien abilities, popups components for pickup items and doors. 
+                    In charge of UI, game modes and minigames. 
+                </p>
+                <div class="tools-list">
+                    <p class="tool unreal-tool">Unreal</p>
+                    <p class="tool cplusplus-tool">C++</p>
+                    <p class="tool bp-tool">Blueprints</p>
+                </div>
+                <p>Platform: Windows</p>
+                <p>Timeline: January 2023 - August 2023</p>
+            </div>
+            <div class="game">
+                <img class="game-image circular-image" id="audl" src="../Images/AUDL.png" style="object-position: 50% 40%;" />
+                <h2 class="centered game-title">Ultimate Frisbee</h2>
+                <p>Contribution: Implemented networking for joining games and player synchronisation, general gameplay loop and UI, audio programming for commentary.
+                </p>
+                <div class="tools-list">
+                    <p class="tool unreal-tool">Unreal</p>
+                    <p class="tool cplusplus-tool">C++</p>
+                    <p class="tool bp-tool">Blueprints</p>
+                </div>
+                <p>Platform: Windows</p>
+                <p>Timeline: January 2022 - December 2022</p>
+            </div>
+        </div>
+
+        <!-- <table>
+            <tr>
+                <td>
+                    <div class="topic-image-wrapper">
+                        <p>Professional</p>
+                        <img class="topic-image" id="professional" src="../Images/MallOverview1.png" />
+                    </div>
+                </td>
+                <td>
+                    <div class="topic-image-wrapper">
+                        <!- - <h1 class="bottom-right">Personal</h1> - ->
+                        <p>Personal</p>
+                        <img class="topic-image" id="personal" src="../Images/GamesIcon.png" />
+                    </div>
+                </td>
+            </tr>
+        </table> -->
+    </div>
+</body>
+</html>

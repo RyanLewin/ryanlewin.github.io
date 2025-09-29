@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Ryan Lewin - Portfolio</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../Scripts/functions.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var headerWrapper = document.createElement('div');
+            headerWrapper.id = 'loaded-header';
+
+            var body = document.getElementsByTagName('body')[0];
+            body.insertBefore(headerWrapper, body.firstChild);
+            $("#loaded-header").load("/Pages/header.html");
+
+            $('.topic-image').click(function () {
+                window.location.href = '/Pages/' + this.id + '.html';
+            })
+        });
+    </script>
+
+    <div class="header-break"></div>
+
+    <div class="icon-container">
+        <div class="icon">
+            <div class="icon-div">
+                <img class="circular-image" id="icon" src="../Images/GraduationPhoto.jpg">
+            </div>
+            <div class="title-div">
+                <h1 class="">Ryan Lewin</h1>
+                <h2><i>Programmer</i></h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="about-me">
+            <button class="toggle-box" id="about-me-toggle" onclick="toggleBlock('about-me')"  style="display: none;">About Me ►</button>
+            <div class="toggle-box-content" id="about-me-content"  style="display: block;">
+                <button class="toggle-box" id="about-me-toggle" onclick="toggleBlock('about-me')">About Me ▼</button>
+                <p>Computer Games Programming BSc graduate attaining an upper 2nd class honours looking for a programming position. I have lots of experience in C# and C++ with an ability to quickly pick up new languages and skills when necessary.</p>
+                <br><p>After graduating I had a bit of time off to spend with family and worked on personal projects, trying to add to my portfolio a bit more, whilst looking out for any jobs that spark my interest. Then lockdown occurred and I got approached for a remote contract job at Poly Fruit Studios, formerly Pineapple Studios, as a Games Programmer, working for equity and then moving onto the Government Kickstarter scheme from February to August 2021. We had a lot of issues due to being an inexperienced team, but we successfully released a number of games and it taught me a lot about programming, source control and teamwork.</p>
+                <br><p>I then did a few months of temporary work inputting data, before joining PsychoHound as a Games Programmer. Working on the official AUDL video game and our own IPs, Ruff ‘N’ Tumble and ‘FB’. The first two games are developed using UE4, and the latter using UE5 along with experience using Gameplay Ability Systems and PlayFab.</p>
+                <br><p>Most recently, I have gained experience as a trainee computer science teacher, studying for my PGCE at the University of Huddersfield. However, I decided that it wasn’t what I wanted to do in life and so I’m now looking for work in a more programming/engineering role again whilst development personal projects in my free time.</p>
+            </div>
+        </div>
+
+        <div id="past-exp">
+            <button class="toggle-box centered" id="past-exp-toggle" onclick="toggleBlock('past-exp')" href="#past-exp-content">Past Experineces ►</button>
+            <div class="toggle-box-content" id="past-exp-content">
+                <button class="toggle-box" id="past-exp-toggle" onclick="toggleBlock('past-exp')">Past Experineces ▼</button>
+                <div class="content-block">
+                    <h2>University of Huddersfield - Trainee Teacher</h2>
+                    <p><em>(Sep 2024 - Mar 2025)</em></p>
+                    <p>I enrolled onto the Initial Teacher Training Course for the summer of 2024 specialising in Computer Science for Secondary school. However, after much deliberation and despite tutors and mentors telling me I had promise, I decided that teaching wasn’t a passion of mine and it was taking a toll on my mental health and so withdrew from the course.</p>
+                </div>
+                <div class="content-block">
+                    <h2>Psycho Hound Ltd - Games Programmer</h2>
+                    <p><em>(Feb 2022 - Aug 2023)</em></p>
+                    <p>Games programmer on a UE5 Multiplayer Horror IP titled ‘FB’, and two UE4 projects, the official Ultimate Frisbee video game,  and Ruff ‘N’ Tumble, a beat ‘em up multiplayer game with a variety of game modes such as King of the Hill, Capture the Flag, Racing, etc. </p>
+                </div>
+                <div class="content-block">
+                    <h2>SDC Enterprises - Data Inputting</h2>
+                    <p><em>(Nov 2021 - Feb 2022)</em></p>
+                    <p>Whilst looking for more programming work, I temporarily worked doing some data inputting, copying data from PDFs to Microsoft Excel.</p>
+                </div>
+                <div class="content-block">
+                    <h2>Poly Fruit Studios LTD - Games Programmer</h2>
+                    <p><em>(Feb 2022 - Aug 2023)</em></p>
+                    <p>I was with Poly Fruit Studios, formerly Pineapple Studios, for just over a year, my first experience in the Games Industry which was enlightening. I worked in a couple teams, first making a more long term game which had its hurdles and then onto making quick hyper-casual mobile games, such as Sketch Roll.</p>
+                </div>
+                <div class="content-block">
+                    <h2>University of Derby</h2>
+                    <p><em>(2015 - 2019)</em></p>
+                    <p><strong>BSc Computer Games Programming - 2:1</strong></p>
+                    <p>Dissertation - Aiming with AI - Tested three methods of using an AI bot to fire at a still target, with varying difficulty levels, comparing the results of each for accuracy and time to fire.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <table>
+            <tr>
+                <td>
+                    <div class="topic-image-wrapper">
+                        <!-- <h1 class="bottom-right">Professional Games</h1> -->
+                        <p>Games</p>
+                        <!-- <p>Professional Games</p> -->
+                        <img class="topic-image" id="games" src="../Images/MallOverview1.png" />
+                    </div>
+                </td>
+                <td></td>
+                <!-- <td>
+                    <div class="topic-image-wrapper">
+                        <!- - <h1 class="bottom-right">Games</h1> - ->
+                        <p>Personal Games</p>
+                        <img class="topic-image" id="games" src="../Images/GamesIcon.png"  onclick="open('games.html', _self)" />
+                    </div>
+                </td> -->
+            </tr>
+            <!-- <tr>
+                <td>
+                    <div class="topic-image-wrapper">
+                        <p>Data</p>
+                        <img class="topic-image" src="../Images/GamesIcon.png" />
+                    </div>
+                </td>
+                <td>
+                    <div class="topic-image-wrapper">
+                        <p>Web</p>
+                        <img class="topic-image" src="../Images/GamesIcon.png" />
+                    </div>
+                </td>
+            </tr> -->
+        </table>
+    </div>
+</body>
+</html>

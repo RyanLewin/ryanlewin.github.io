@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>FB - Ryan Lewin - Game Developer Portfolio</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/games.css">
+    <link rel="stylesheet" href="/css/fullimage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var headerWrapper = document.createElement('div');
+            headerWrapper.id = 'loaded-header';
+
+            var body = document.getElementsByTagName('body')[0];
+            body.insertBefore(headerWrapper, body.firstChild);
+            $("#loaded-header").load("/Pages/header.html");
+
+            $("img").click(
+                function()
+                {
+                    console.log($(this).parent()[0].tagName)
+                    if ($(this).parent()[0].tagName !== "A")
+                    {
+                        $(".fullscreen-image").attr("src", $(this).attr("src"));
+                        $(".fullscreen-overlay").css('display', 'flex');
+                        document.body.style.overflow = 'hidden';
+                    }
+                     //   this.requestFullscreen()
+                }
+            );
+
+            $(".fullscreen-overlay").click(function () {
+                $(".fullscreen-overlay").css('display', 'none');
+                document.body.style.overflow = 'auto';
+            })
+        });
+    </script>
+
+    <div class="header-break"></div>
+
+    <div id="content">
+        <h2>Multiplayer Horror Game - FB</h2>
+        <br>
+        <div>
+            <p style="margin: 20px"><strong>Game Details</strong></p>
+            <p>Genre: Horror, Social Deduction</p>
+            <p>Languages: C++, Blueprints</p>
+            <p>Tools: Unreal Engine 5.1, Jetbrains Rider</p>
+            <p>Platform: Windows</p>
+            <p>Studio: PsychoHound</p>
+        </div>
+
+        <br><hr>
+
+        <p style="margin: 20px"><strong>Game Brief</strong></p>
+        <p>FB is a sort of Multiplayer Horror-Social Deduction game of Psycho Hound’s IP, taking inspiration from the movie, The Thing, and games such as Dead by Daylight and Dead Space 3. The basic premise being 7 survivors find themselves trapped in a remote tundra base with one killer Mutant.</p>
+        <p>As the game begins, one player is chosen, starting out as the mutant. They are a tall, grotesque alien with different abilities, ranging from a burst of sprinting, to hurling rubble down a corridor at survivors, to shrieking and turning off all the fuse boxes, bringing the base into almost complete darkness. Their primary role is to down and infect all the other survivors and prevent anyone from escaping. </p>
+        <p>The survivors must try and fix the power, collect the data and then escape without being taken over by the Mutant.</p>
+        
+        <br><hr>
+        
+        <img src="/Images/multiplayer-horror.png" width="100%"/>
+
+        <br><hr>
+
+        <p style="margin: 20px"><strong>My Work</strong></p>
+        <p>VOIP Plugin</p>
+        <ul>
+            <li>Created a plugin, making use of the VOIPTalker component to easily add voice chat to the game, allowing switching of channels based on the players current character by making use of Audio Components source bus.</li>
+            <li>Added options that allow users to change the volume of specific players.</li>
+        </ul>
+        <p>Character Mechanics</p>
+        <ul>
+            <li>Charged with working on the alien abilities which were repeatedly changing and being redesigned, abilities included things such as, close attacks that ragdolled characters, throwing objects at targeted players, applying a buff to all lifeforms, etc.</li>
+            <li>Abilities were selectable by using a scrollable bar at first before being changed to an ability wheel, which was adapted from a UE Marketplace plugin, where I had to modify how the items were displayed and selected, with requirements to display cooldowns and ability descriptions.</li>
+        </ul>
+        <p>Gameplay Ability System (GAS)</p>
+        <ul>
+            <li>This is the first project I’ve worked on using GAS, with a bit of a learning curve on how Gameplay Effects and Abilities work and the best practices, but they proved very useful for keeping track of data, especially over network, and with cooldowns and usage of abilities.</li>
+        </ul>
+        <p>Popup Manager</p>
+        <ul>
+            <li>Implemented a system using gameplay cues that allowed for easy adding of popups to various items around the map, whether it be pickups, doors or other players. All the designer had to do was add to an array with the the interacting player type and then give it a name and if it has a corresponding key. There were ways to add other requirements as well, such as blocking if the player or the item had or didn't have a specified tag.</li>
+        </ul>
+        <p>Game Modes</p>
+        <ul>
+            <li>In charge of the game mode which handles where each player spawns keeps track of which player is on what team and when the game should end.</li>
+            <li>Also worked on a side game mode where the players can play hide and seek, where the hiders play as the Offsprings whilst the seeker is the survivor and must shine his torch on the hiders to kill them.</li>
+        </ul>
+        <p>Minigames</p>
+        <ul>
+            <li>Added a minigame to replace button mashing which wasn't exactly even or foolproof in a multiplayer game. My new design was essentially a rythm game, pressing a given key in a time frame, and if failed called a delegate which could be used to decide if the game should end on failure or reduce points.</li>
+        </ul>
+        <p>Bug Fixing</p>
+        <ul>
+            <li>Known as cheif bugfixer, I knew the project inside out and often if a bug was found by QA, I would have it fixed before they could finish describing it.</li>
+        </ul>
+    </div>
+
+    <div class="fullscreen-overlay">
+        <img src="" alt="Selected Image" class="fullscreen-image">
+    </div>
+</body>
+</html>

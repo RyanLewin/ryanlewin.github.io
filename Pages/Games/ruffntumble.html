@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Ruff 'N' Tumble - Ryan Lewin - Game Developer Portfolio</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/games.css">
+    <link rel="stylesheet" href="/css/fullimage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var headerWrapper = document.createElement('div');
+            headerWrapper.id = 'loaded-header';
+
+            var body = document.getElementsByTagName('body')[0];
+            body.insertBefore(headerWrapper, body.firstChild);
+            $("#loaded-header").load("/Pages/header.html");
+
+            $("img").click(
+                function()
+                {
+                    console.log($(this).parent()[0].tagName)
+                    if ($(this).parent()[0].tagName !== "A")
+                    {
+                        $(".fullscreen-image").attr("src", $(this).attr("src"));
+                        $(".fullscreen-overlay").css('display', 'flex');
+                        document.body.style.overflow = 'hidden';
+                    }
+                     //   this.requestFullscreen()
+                }
+            );
+
+            $(".fullscreen-overlay").click(function () {
+                $(".fullscreen-overlay").css('display', 'none');
+                document.body.style.overflow = 'auto';
+            })
+        });
+    </script>
+
+    <div class="header-break"></div>
+
+
+    <div id="content">
+        <h2>Ruff 'N' Tumble : Mayhem</h2>
+        <br>
+        <p style="margin: 20px"><strong>Game Details</strong></p>
+        <p>Genre: Beat ‘em Up, Party</p>
+        <p>Languages: C++, Blueprints</p>
+        <p>Tools: Unreal Engine 4.25, Jetbrains Rider</p>
+        <p>Platform: Windows</p>
+        <p>Studio: PsychoHound</p>
+
+        <br><hr>
+
+        <p style="margin: 20px"><strong>Game Brief</strong></p>
+        <p>Ruff ‘N’ Tumble is a multiplayer beat ‘em up party game, where you run around various maps and arenas, picking up weapons such as the freeze gun, getting power ups to supersize or minify your character, and riding vehicles like trams, wheelbarrows and horses all with their own advantages and disadvantages. </p>
+        
+        <br><hr>
+
+        <p style="margin: 20px"><strong>My Work</strong></p>
+        <p>Personally, I mostly worked on the mall and lobby systems, allowing players to host or join a level for their friends and run around, playing with different vehicles such as a trike and a wheelbarrow that can pick other players up. There’s also an area to swim in with fish, a tram system that travels around the map that the player can hop on at various stations.</p>
+        <br><p>I also made a couple of game modes, the classic King of the Hill with a few twists, like the ability to lower the centre circle into lava for a second by punching a gong that sits on the outer edges of the ring, or lowering the stepping stones leading to the gongs by climbing up the pillars.</p>
+        <br><p>I’ve also added a slushy related game, of which the players have to get across the map past the three wrecking balls, collect a bucket of slushy and then make their way back to deposit it in their collection point whilst trying to knock each other off the balance beams.</p>
+        <br><p>During my final couple weeks at the company, I was tasked with quick prototyping of a couple more game modes, one a sort of team based diner dash/plate up kind of game, where you had to run to the kitchen and get peoples orders. Another a simple racing game mode, where you drive around a track and either try and get the best lap time or just win the whole race in a 5 lap course, using speed boosts and laying traps to gain an advantage.</p>
+    
+        <br><hr><br>
+
+        <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/5vYVl-_643w" title="Ruff &#39;Em Up - Portfolio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <br>
+
+        <table>
+            <tr>
+                <td><img class="game-table-image" src="/Images/rnt/MallAquarium.png"/></td>
+                <td><img class="game-table-image" src="/Images/rnt/MallBarn.png"/></td>
+            </tr>
+            <tr>
+                <td><img class="game-table-image" src="/Images/rnt/MallMapSelector.png"/></td>
+                <td><img class="game-table-image" src="/Images/rnt/MallOverview1.png"/></td>
+            </tr>
+            <tr>
+                <td><img class="game-table-image" src="/Images/rnt/SlushyGM.png"/></td>
+                <td><img class="game-table-image" src="/Images/rnt/SlushyOverview.png"/></td>
+            </tr>
+            <tr>
+                <td><img class="game-table-image" src="/Images/rnt/HighresScreenshot00003.png"/></td>
+                <td><img class="game-table-image" src="/Images/rnt/HighresScreenshot00006.png"/></td>
+            </tr>
+            <tr>
+                <td><img class="game-table-image" src="/Images/rnt/HighresScreenshot00007.png"/></td>
+                <td><img class="game-table-image" src="/Images/rnt/HighresScreenshot00008.png"/></td>
+            </tr>
+            <tr>
+                <td><img class="game-table-image" src="/Images/rnt/HighresScreenshot00010.png"/></td>
+                <td><img class="game-table-image" src="/Images/rnt/HighresScreenshot00013.png"/></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="fullscreen-overlay">
+        <img src="" alt="Selected Image" class="fullscreen-image">
+    </div>
+</body>
+</html>
